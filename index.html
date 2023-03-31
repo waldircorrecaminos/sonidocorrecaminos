@@ -15,8 +15,8 @@
             
             width: 100px;
             height: 100px;
-            animation-duration: 3s;
-            animation-name:none;
+            animation-duration: 2s;
+            /* animation-name:slidein; */
 
     }
 
@@ -45,8 +45,13 @@
         const sonido = document.querySelector('.sonido')
         const img = document.querySelector('img')
         img.addEventListener('click' , function(){
+            imagecss.style.setProperty("animation-name", "slidein"); 
             sonido.play()
-            imagecss.attributes.style[animation-name] = 'slidein'
+            setTimeout(() => {
+                
+                imagecss.style.removeProperty("animation-name");
+            }, 2000);
+            
         })
     </script>
 </body>
