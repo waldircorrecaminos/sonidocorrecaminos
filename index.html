@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container {
+           
+            background-color: black;
+        }
+        .image {
+            
+            width: 100px;
+            height: 100px;
+            animation-duration: 3s;
+            animation-name:none;
+
+    }
+
+    @keyframes slidein {
+    from {
+        margin-left: 100px;
+        
+    }
+
+    to {
+        margin-left: calc(100% - 100px);
+        
+    }
+    }
+
+    </style>
+</head>
+<body>
+    <audio class="sonido" src="http://www.sonidosmp3gratis.com/sounds/correcaminos-bip%20bip.mp3" ></audio>
+    <div class="container">
+        <img src="https://w1.pngwing.com/pngs/778/105/png-transparent-bird-line-art-wile-e-coyote-wile-e-coyote-and-the-road-runner-looney-tunes-marvin-the-martian-beep-beep-cartoon-roadrunner.png" alt="" class="image">
+    </div>
+
+    <script>
+       const imagecss = document.querySelector('.image')
+        const sonido = document.querySelector('.sonido')
+        const img = document.querySelector('img')
+        img.addEventListener('click' , function(){
+            sonido.play()
+            imagecss.attributes.style[animation-name] = 'slidein'
+        })
+    </script>
+</body>
+</html>
